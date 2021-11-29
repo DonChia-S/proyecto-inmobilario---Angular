@@ -1,0 +1,11 @@
+.bg-body{
+    background-image: linear-gradient(
+        rgba(255, 227, 68, 0.85), 
+      rgba(255, 217, 50, 0.85)) ,
+      url('../../img/fondo-1.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5vh;
+
+}
