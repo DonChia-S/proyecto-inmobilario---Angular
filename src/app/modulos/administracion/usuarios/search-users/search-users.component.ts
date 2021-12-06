@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModeloUsuario } from 'src/app/modelos/usuario.modelo';
+import { UsuariosService } from 'src/app/servicios/usuarios.service';
 
 @Component({
   selector: 'app-search-users',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchUsersComponent implements OnInit {
 
-  constructor() { }
+  listadoRegistros: ModeloUsuario[] = [];
+
+  constructor(private usuarioServicio : UsuariosService) { }
 
   ngOnInit(): void {
+    this.ObtenerListadoUsuario();
+  }
+
+  ObtenerListadoUsuario(){
+    this.usuarioServicio.ObtenerRegistro().subscribe((datos: ModeloUsuario[]) => {
+      this.listadoRegistros = datos;
+    });
   }
 
 }

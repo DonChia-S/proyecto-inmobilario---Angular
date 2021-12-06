@@ -8,22 +8,6 @@ body{
     font-family: Helvetica, sans-serif;
 }
 
-.login{
-    position: relative;
-    padding: 5vh 0 15vh;
-    margin-left: 15%;
-}
-
-.form-login{
-    font-size: 3vh;
-    background-color: rgba(255,255,255, 1.0);
-    border-radius: 5vh;
-    padding: 5vh 2.5vh;
-}
-
-.input-field{
-    margin-bottom: 2%;
-}
 
 h1{
     color: rgb(0, 10, 32);
@@ -31,3 +15,4 @@ h1{
     font-weight: bold;
     margin: 3.5vh 0;
 }
+

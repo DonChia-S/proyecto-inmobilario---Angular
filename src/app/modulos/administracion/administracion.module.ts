@@ -6,6 +6,7 @@ import { CreateUsersComponent } from './usuarios/create-users/create-users.compo
 import { EditUsersComponent } from './usuarios/edit-users/edit-users.component';
 import { DeleteUsersComponent } from './usuarios/delete-users/delete-users.component';
 import { SearchUsersComponent } from './usuarios/search-users/search-users.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { SearchUsersComponent } from './usuarios/search-users/search-users.compo
   ],
   imports: [
     CommonModule,
-    AdministracionRoutingModule
+    AdministracionRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class AdministracionModule { }

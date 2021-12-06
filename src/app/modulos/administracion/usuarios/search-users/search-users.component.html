@@ -1,1 +1,45 @@
-<p>search-users works!</p>
+<a routerLink="/administracion/crear-usuario" class="btn">Nuevo Usuario</a>
+<table class="table responsive">
+    <thead>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Apellido
+        </th>
+        <th>
+            Documento
+        </th>
+        <th>
+            Correo
+        </th>
+        <th>
+            Telefono
+        </th>
+        </thead>
+        <tbody>
+            <tr *ngFor = 'let p of listadoRegistros'>
+                <td>
+                    {{p.nombre}}
+                </td>
+                <td>
+                    {{p.apellido}}
+                </td>
+                <td>
+                    {{p.documento}}
+                </td>
+                <td>
+                    {{p.correo}}
+                </td>
+                <td>
+                    {{p.telefono}}
+                </td>
+                <td>
+                    <a routerLink= "/administracion/editar-usuario/{{p.id}}" class="btn">Editar</a>
+                </td>
+                <td>
+                    <a class="btn">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+</table>
