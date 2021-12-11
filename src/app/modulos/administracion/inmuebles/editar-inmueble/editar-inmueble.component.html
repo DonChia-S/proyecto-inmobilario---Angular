@@ -1,0 +1,65 @@
+<div class="row">
+    <h3 class="center-align">Editar Inmueble</h3>
+    <form [formGroup]="fgValidador" (ngSubmit)="EditarInmueble()" method="post" class="form-edit">
+      <input type="hidden" formControlName=""/>
+      <div class="row">
+        <div class="input-field col s6">
+          <label for="direccion" class="active">Direccion</label>
+          <input formControlName="direccion" id="direccion" name="direccion" type="text" class="validate">
+        </div>
+        <div class="input-field col s6">
+          <label for="valor" class="active">Valor</label>
+          <input formControlName="valor" id="valor" type="number" name="valor" class="validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="encargado" class="active">Encargado</label>
+          <input formControlName="encargado" id="encargado" type="text" name="encargado" class="validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="telEncargado" class="active">Telefono del Encargado</label>
+          <input formControlName="telEncargado" id="telEncargado" type="text" name="telEncargado" class="validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="foto" class="active">foto</label>
+          <input formControlName="foto" id="foto" type="text" name="foto" class="validate" placeholder="ingrese url de la imagen">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="video" class="active">Video</label>
+          <input formControlName="video" id="video" type="text" name="video" class="validate" placeholder="ingrese url del video">
+        </div>
+      </div>
+      <div class="row">
+        <label>seleccionar Tipo de Inmueble</label>
+        <select class="browser-default validate" formControlName="tipoInmuebleId" id="tipoInmuebleId" type="text" name="tipoInmuebleId">
+          <option value="" disabled selected>Seleccione...</option>
+          <option value="61b40eb34e879703d88d46be">Casa</option>
+          <option value="61b40ebd4e879703d88d46bf">Apartemento</option>
+          <option value="61b40ec44e879703d88d46c0">Lote</option>
+        </select>
+       </div>
+       <div class="row">
+        <label>seleccionar Oferta</label>
+        <select class="browser-default validate" formControlName="ofertaId" id="ofertaId" type="text" name="ofertaId" >
+          <option value="" disabled selected>Seleccione...</option>
+          <option value="61b40fe24e879703d88d46c1">Venta</option>
+          <option value="61b40ff14e879703d88d46c2">Arriendo</option>
+          <option value="61b40ff74e879703d88d46c3">Alquilado</option>
+        </select>
+    </div>
+      <p class="center-align">
+        <button [disabled]="!fgValidador.valid" class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+      </button>
+      </p>
+    </form>
+  </div>
+
+

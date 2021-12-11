@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col s3 m3" *ngFor = 'let p of listadoRegistrosInm'>
+      <div class="card">
+        <div class="card-image">
+            <img src="{{p.foto}}" width="200" height="200">
+          <span class="card-title">{{p.direccion}}</span>
+        </div>
+        <div class="card-content">
+          <p>Valor: ${{p.valor}}</p>
+          <p>Encargado: {{p.encargado}}</p>
+          <p>telefono: {{p.telEncargado}}</p>
+        </div>
+        <div class="card-action">
+          <a (click)="CrearSolicitud(this.p.id)" class="btn">Solicitar</a>
+        </div>
+      </div>
+    </div>
+  </div>

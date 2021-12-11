@@ -1,0 +1,45 @@
+<a routerLink="/administracion/crear-inmueble" class="btn">Nuevo Inmueble</a>
+<table class="table responsive">
+    <thead>
+        <th>
+            Direccion
+        </th>
+        <th>
+            Valor
+        </th>
+        <th>
+            Foto
+        </th>
+        <th>
+            Encargado
+        </th>
+        <th>
+            Telefono de contacto
+        </th>
+        </thead>
+        <tbody>
+            <tr *ngFor = 'let p of listadoRegistrosInm'>
+                <td>
+                    {{p.direccion}}
+                </td>
+                <td>
+                    ${{p.valor}}
+                </td>
+                <td>
+                    <img src="{{p.foto}}" width="200">
+                </td>                
+                <td>
+                    {{p.encargado}}
+                </td>
+                <td>
+                    {{p.telEncargado}}
+                </td>
+                <td>
+                    <a routerLink= "/administracion/editar-inmueble/{{p.id}}" class="btn">Editar</a>
+                </td>
+                <td>
+                    <a routerLink= "/administracion/eliminar-inmueble/{{p.id}}" class="btn">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+</table>

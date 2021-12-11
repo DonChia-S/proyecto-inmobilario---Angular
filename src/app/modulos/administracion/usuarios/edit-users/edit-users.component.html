@@ -1,1 +1,54 @@
-<p>edit-users works!</p>
+<div class="row">
+    <h3 class="center-align">Editar Usuario</h3>
+    <form [formGroup]="fgValidador" (ngSubmit)="EditarUsuario()" method="post" class="form-edit">
+      <input type="hidden" formControlName=""/>
+      <div class="row">
+        <div class="input-field col s6">
+          <label for="nombre" class="active">Nombre</label>
+          <input formControlName="nombre" id="nombre" name="nombre" type="text" class="validate">
+        </div>
+        <div class="input-field col s6">
+          <label for="apellido" class="active">Apellido</label>
+          <input formControlName="apellido" id="apellido" type="text" name="apellido" class="validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="documento" class="active">N°.Documento</label>
+          <input formControlName="documento" id="documento" type="text" name="documento" class="validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="correo" class="active">Correo</label>
+          <input formControlName="correo" id="correo" type="email" name="correo" class="validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="telefono" class="active">Telefono</label>
+          <input formControlName="telefono" id="telefono" type="text" name="telefono" class="validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="password" class="active">Contraseña</label>
+          <input formControlName="password" id="password" type="text" name="password" class="validate">
+        </div>
+      </div>
+      <div class="row">
+        <label>seleccionar Rol</label>
+        <select class="browser-default validate" formControlName="rolId" id="rolId" type="text" name="rolId">
+          <option value="" disabled selected>Seleccione...</option>
+          <option value="61993daee7e1d3032497173f">Administrador</option>
+          <option value="61993debe7e1d30324971740">Cliente</option>
+          <option value="61993df3e7e1d30324971741">Asesor</option>
+        </select>
+    </div>
+      <p class="center-align">
+        <button [disabled]="!fgValidador.valid" class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+      </button>
+      </p>
+    </form>
+  </div>

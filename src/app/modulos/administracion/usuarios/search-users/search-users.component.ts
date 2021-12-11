@@ -22,5 +22,4 @@ export class SearchUsersComponent implements OnInit {
       this.listadoRegistros = datos;
     });
   }
-
 }

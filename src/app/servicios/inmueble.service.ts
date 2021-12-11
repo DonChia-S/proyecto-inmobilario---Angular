@@ -1,13 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ModeloUsuario } from '../modelos/usuario.modelo';
+import { ModeloInmueble } from '../modelos/inmueble.modelo';
 import { SeguridadService } from './seguridad.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsuariosService {
+export class InmuebleService {
 
   url = 'http://localhost:3000';
   token : string = '';
@@ -15,24 +15,24 @@ export class UsuariosService {
     this.token = this.seguridadServicio.ObtenerToken(); 
   }
 
-  ObtenerRegistro(): Observable<ModeloUsuario[]>{
-    return this.http.get<ModeloUsuario[]>(`${this.url}/usuarios`)
+  ObtenerRegistro(): Observable<ModeloInmueble[]>{
+    return this.http.get<ModeloInmueble[]>(`${this.url}/inmuebles`)
   }
 
-  ObtenerRegistroPorId(id: string): Observable<ModeloUsuario>{
-    return this.http.get<ModeloUsuario>(`${this.url}/usuarios/${id}`)
+  ObtenerRegistroPorId(id: string): Observable<ModeloInmueble>{
+    return this.http.get<ModeloInmueble>(`${this.url}/inmuebles/${id}`)
   }
 
-  CrearUsuario(usuario: ModeloUsuario): Observable<ModeloUsuario>{
-    return this.http.post<ModeloUsuario>(`${this.url}/usuarios`, usuario, {
+  CrearUsuario(usuario: ModeloInmueble): Observable<ModeloInmueble>{
+    return this.http.post<ModeloInmueble>(`${this.url}/inmuebles`, usuario, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
     })
   }
 
-  ActualizarUsuario(usuario: ModeloUsuario): Observable<ModeloUsuario>{
-    return this.http.put<ModeloUsuario>(`${this.url}/usuarios/${usuario.id}`, usuario, {
+  ActualizarUsuario(usuario: ModeloInmueble): Observable<ModeloInmueble>{
+    return this.http.put<ModeloInmueble>(`${this.url}/inmuebles/${usuario.id}`, usuario, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
@@ -40,11 +40,10 @@ export class UsuariosService {
   }
 
   EliminarUsuario(id: string): Observable<any>{
-    return this.http.delete(`${this.url}/usuarios/${id}`,{
+    return this.http.delete(`${this.url}/inmuebles/${id}`,{
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
     })
   }
-
 }

@@ -36,17 +36,17 @@ export class IdentificacionComponent implements OnInit {
         if(d.nombre == 'admin'){
           this.router.navigate(['/administracion/buscar-usuario'])
         }else if(d.nombre == 'asesor'){
+          this.router.navigate(['/administracion/listar-inmueble'])
           alert('bienvenido asesor')
         }else if(d.nombre == 'cliente'){
+          this.router.navigate(['/administracion/solicitar-inmueble'])
           alert('bienvenido cliente')
         }else{
           alert("Este usuario no tiene rol")
         }
       })
-      console.log(datos.datos.rol)
-      this.router.navigate(['/inicio'])
     }, (error: any) =>{
-      alert("Datos inválidos")
+      alert("Datos invalidos")
     })
   }
 
